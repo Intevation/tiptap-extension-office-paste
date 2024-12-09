@@ -25,4 +25,4 @@ const editor = Editor({
 
 # License
 
-The MIT License (MIT). Please see [License File](https://github.com/Intevation/tiptap-extension-office-paste/blob/main/Licence.md) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/Intevation/tiptap-extension-office-paste/blob/main/LICENSE) for more information.
