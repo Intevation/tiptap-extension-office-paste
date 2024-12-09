@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@tiptap/core": "^2.10.3",
+    "@tiptap/pm": "^2.10.3"
+  },
+  "name": "tiptap-extension-office-paste",
+  "version": "0.0.1",
+  "description": "Office paste fix extension for tiptap editor",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Intevation/tiptap-extension-office-paste.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Intevation/tiptap-extension-office-paste/issues"
+  },
+  "homepage": "https://github.com/Intevation/tiptap-extension-office-paste#readme"
+}
