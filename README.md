@@ -1,6 +1,11 @@
 # Tiptap office paste extension
 This extension fixes format of text copied from MS Office and pasted into the [Tiptap](https://tiptap.dev/) editor. 
 
+## Installing
+```
+npm i --save @intevation/tiptap-extension-office-paste
+```
+
 ## Features
 * Fixes lists
   * Convertes mso lists into actual html lists
