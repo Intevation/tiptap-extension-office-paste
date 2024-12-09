@@ -1,15 +1,20 @@
 {
-  "dependencies": {
-    "@tiptap/core": "^2.10.3",
-    "@tiptap/pm": "^2.10.3"
-  },
-  "name": "tiptap-extension-office-paste",
+  "name": "@intevation/tiptap-extension-office-paste",
   "version": "0.0.1",
   "description": "Office paste fix extension for tiptap editor",
-  "main": "index.js",
-  "devDependencies": {},
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup src/index.ts --format cjs,esm --dts"
+  },
+  "keywords": [
+    "tiptap"
+  ],
+  "peerDependencies": {
+    "@tiptap/core": "^2.10.3",
+    "@tiptap/pm": "^2.10.3"
   },
   "repository": {
     "type": "git",
@@ -20,5 +25,11 @@
   "bugs": {
     "url": "https://github.com/Intevation/tiptap-extension-office-paste/issues"
   },
-  "homepage": "https://github.com/Intevation/tiptap-extension-office-paste#readme"
+  "homepage": "https://github.com/Intevation/tiptap-extension-office-paste#readme",
+  "devDependencies": {
+    "@tiptap/core": "^2.10.3",
+    "@tiptap/pm": "^2.10.3",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
 }
