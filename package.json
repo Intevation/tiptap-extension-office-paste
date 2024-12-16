@@ -7,7 +7,8 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts"
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "test": "node --import tsx --test src/*.spec.ts"
   },
   "keywords": [
     "tiptap"
@@ -29,7 +30,9 @@
   "devDependencies": {
     "@tiptap/core": "^2.10.3",
     "@tiptap/pm": "^2.10.3",
+    "@types/node": "^22.10.2",
     "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   }
 }
