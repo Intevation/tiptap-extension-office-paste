@@ -50,3 +50,14 @@ export function unwrapNode(node: Node): void {
     }
     parent?.removeChild(node);
 }
+
+/**
+ * Parses arbitrary style properties of an element into an object
+ *
+ * @param {Element} el
+ * @returns {Object}
+ */
+export function parseStyleAttribute(el: Element): { [prop: string]: string } {
+    const styleRaw: string = el?.attributes[`style`]?.value || ``;
+    return Object.fromEntries(styleRaw.split(`;`).map(line => line.split(`:`).map(v => v.trim())));
+}
