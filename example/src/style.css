@@ -1,0 +1,20 @@
+.editor .tiptap {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid;
+  height: 25vh;
+  margin-bottom: 5px;
+  overflow: scroll;
+  resize: vertical;
+}
+
+.output-html, .input-html {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid;
+  height: 25vh;
+  min-height: 200px;
+  margin-bottom: 0.3vh;
+  overflow: scroll;
+  resize: vertical;
+}
