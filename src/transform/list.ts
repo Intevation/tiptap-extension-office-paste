@@ -1,4 +1,4 @@
-import { parseStyleAttribute } from "../utils";
+import { parseLetterNumber, parseRomanNumber, parseStyleAttribute } from "../utils";
 
 export function transformLists(html: string): string {
     if (html.indexOf(`mso-list:`) === -1) {
