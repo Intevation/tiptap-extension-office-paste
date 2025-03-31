@@ -20,6 +20,7 @@
     "@tiptap/extension-table-header": "^2.11.7",
     "@tiptap/extension-table-row": "^2.11.7",
     "@tiptap/pm": "^2.10.3",
-    "@tiptap/starter-kit": "^2.10.3"
+    "@tiptap/starter-kit": "^2.10.3",
+    "html-format": "^1.1.7"
   }
 }

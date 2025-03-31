@@ -6,6 +6,9 @@
   margin-bottom: 5px;
   overflow: scroll;
   resize: vertical;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .output-html, .input-html {
@@ -17,4 +20,8 @@
   margin-bottom: 0.3vh;
   overflow: scroll;
   resize: vertical;
+  white-space: pre;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }

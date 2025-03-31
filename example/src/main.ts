@@ -7,6 +7,7 @@ import Table from '@tiptap/extension-table';
 import TableRow from '@tiptap/extension-table-row';
 import TableCell from '@tiptap/extension-table-cell';
 import TableHeader from '@tiptap/extension-table-header';
+import format from "html-format";
 
 const editor = new Editor({
   element: document.querySelector('.editor')!,
@@ -20,14 +21,14 @@ const editor = new Editor({
     Extension.create({
       priority: 100000,
       onUpdate: () => {
-        document.querySelector(`.output-html`)!.textContent = editor.getHTML();
+        document.querySelector(`.output-html`)!.textContent = format(editor.getHTML());
       },
       addProseMirrorPlugins() {
           return [new Plugin({
             key: new PluginKey('get-paste-paste'),
             props: {
                 transformPastedHTML(html: string): string {
-                  document.querySelector(`.input-html`)!.textContent = html;
+                  document.querySelector(`.input-html`)!.textContent = format(html);
                   return html;
                 }
             }
