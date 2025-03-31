@@ -1,5 +1,5 @@
 import { Extension } from '@tiptap/core';
-import { Plugin } from '@tiptap/pm/state';
+import { Plugin, PluginKey } from '@tiptap/pm/state';
 import { transformMsoStyles } from './transform/style';
 import { transformRemoveBookmarks } from './transform/bookmark';
 import { transformLists } from './transform/list';
@@ -14,6 +14,7 @@ const OfficePaste = Extension.create({
 });
 
 const OfficePastePlugin = new Plugin({
+    key: new PluginKey('office-paste'),
     props: {
         transformPastedHTML(html: string): string {
             if (html.indexOf(`microsoft-com`) !== -1 && html.indexOf(`office`) !== -1) {
