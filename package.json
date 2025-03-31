@@ -1,6 +1,6 @@
 {
   "name": "@intevation/tiptap-extension-office-paste",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Office paste fix extension for tiptap editor",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -8,6 +8,7 @@
   "type": "module",
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
+    "clean": "rm -r dist/",
     "test": "node --import tsx --test src/*.spec.ts"
   },
   "keywords": [
