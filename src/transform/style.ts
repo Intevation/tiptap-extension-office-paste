@@ -1,7 +1,7 @@
 import { parseStyleAttribute } from "../utils";
 
 export function transformMsoStyles(html: string): string {
-    html = html.replace(/<o:p>(.*)<\/o:p>/g, ``);
+    html = html.replace(/<o:p>(.*?)<\/o:p>/g, ``);
 
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, `text/html`);
