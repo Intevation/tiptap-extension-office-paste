@@ -12,7 +12,8 @@
     "test": "node --import tsx --test src/*.spec.ts"
   },
   "keywords": [
-    "tiptap"
+    "tiptap",
+    "tiptap-extension"
   ],
   "peerDependencies": {
     "@tiptap/core": "^2.10.3",
