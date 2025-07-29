@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
@@ -14,13 +14,13 @@
   },
   "dependencies": {
     "@intevation/tiptap-extension-office-paste": "file:..",
-    "@tiptap/core": "^2.10.3",
-    "@tiptap/extension-table": "^2.11.7",
-    "@tiptap/extension-table-cell": "^2.11.7",
-    "@tiptap/extension-table-header": "^2.11.7",
-    "@tiptap/extension-table-row": "^2.11.7",
-    "@tiptap/pm": "^2.10.3",
-    "@tiptap/starter-kit": "^2.10.3",
+    "@tiptap/core": "^2.25.0",
+    "@tiptap/extension-table": "^2.25.0",
+    "@tiptap/extension-table-cell": "^2.25.0",
+    "@tiptap/extension-table-header": "^2.25.0",
+    "@tiptap/extension-table-row": "^2.25.0",
+    "@tiptap/pm": "^2.25.0",
+    "@tiptap/starter-kit": "^2.25.0",
     "html-format": "^1.1.7"
   }
 }
