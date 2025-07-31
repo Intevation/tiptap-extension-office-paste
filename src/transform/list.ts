@@ -51,9 +51,22 @@ function hasNonListItemSibling(el: HTMLElement): boolean {
     );
 }
 
-function getListItemFromParagraph(el: HTMLElement): HTMLElement {
+function getListItemFromParagraph(el: HTMLElement): HTMLLIElement {
     const li = document.createElement(`li`);
-    li.innerHTML = el.innerHTML.replace(listTypeRegex, ``);
+
+    let skipNodes = false;
+    for (const node of el.childNodes) {
+        if (node.nodeType === Node.COMMENT_NODE && node.textContent === `[if !supportLists]`) {
+            skipNodes = true;
+            continue;
+        }
+        if (!skipNodes) {
+            li.appendChild(node.cloneNode(true));
+        }
+        if (node.nodeType === Node.COMMENT_NODE && node.textContent === `[endif]`) {
+            skipNodes = false;
+        }
+    }
 
     return li;
 }
@@ -68,13 +81,11 @@ function parseMsoListAttribute(attr: string): [id: string, level: number] {
     return [msoListId, msoListLevel];
 }
 
-const listTypeRegex = /<!--\[if \!supportLists\]-->((.|\n)*)<!--\[endif\]-->/m;
 function getListPrefix(el: HTMLElement): string {
-    const matches = el.innerHTML.match(listTypeRegex);
-    if (matches?.length) {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(matches[0], `text/html`);
-        return doc.body.querySelector(`span`)?.textContent || ``;
+    for (const node of el.childNodes) {
+        if (node.nodeType === Node.COMMENT_NODE && node.textContent === `[if !supportLists]`) {
+            return node.nextSibling?.textContent?.trim() ?? ``;
+        }
     }
 
     return ``;
