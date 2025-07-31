@@ -104,30 +104,26 @@ function getListInfo(prefix: string): { type: string; start: number; countType: 
     let type = `ul`;
     let countType: string | null = null;
     let start = 1;
-    if (listOrderRegex.number.test(prefix)) {
+    let matches: RegExpMatchArray | null;
+    if ((matches = prefix.match(listOrderRegex.number))) {
         type = `ol`;
-        // @ts-ignore
-        start = +prefix.match(listOrderRegex.number)[0].replace(`.`, ``);
-    } else if (listOrderRegex.romanLower.test(prefix)) {
+        start = +matches[0].replace(`.`, ``);
+    } else if ((matches = prefix.match(listOrderRegex.romanLower))) {
         type = `ol`;
         countType = `i`;
-        // @ts-ignore
-        start = +parseRomanNumber(prefix.match(listOrderRegex.romanLower)[0].replace(`.`, ``));
-    } else if (listOrderRegex.romanUpper.test(prefix)) {
+        start = +parseRomanNumber(matches[0].replace(`.`, ``));
+    } else if ((matches = prefix.match(listOrderRegex.romanUpper))) {
         type = `ol`;
         countType = `I`;
-        // @ts-ignore
-        start = +parseRomanNumber(prefix.match(listOrderRegex.romanUpper)[0].replace(`.`, ``));
-    } else if (listOrderRegex.letterLower.test(prefix)) {
+        start = +parseRomanNumber(matches[0].replace(`.`, ``));
+    } else if ((matches = prefix.match(listOrderRegex.letterLower))) {
         type = `ol`;
         countType = `a`;
-        // @ts-ignore
-        start = +parseLetterNumber(prefix.match(listOrderRegex.letterLower)[0].replace(`.`, ``));
-    } else if (listOrderRegex.letterUpper.test(prefix)) {
+        start = +parseLetterNumber(matches[0].replace(`.`, ``));
+    } else if ((matches = prefix.match(listOrderRegex.letterUpper))) {
         type = `ol`;
         countType = `A`;
-        // @ts-ignore
-        start = +parseLetterNumber(prefix.match(listOrderRegex.letterUpper)[0].replace(`.`, ``));
+        start = +parseLetterNumber(matches[0].replace(`.`, ``));
     }
 
     return {
