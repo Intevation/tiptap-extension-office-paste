@@ -14,13 +14,14 @@
   },
   "dependencies": {
     "@intevation/tiptap-extension-office-paste": "file:..",
-    "@tiptap/core": "^2.25.0",
-    "@tiptap/extension-table": "^2.25.0",
-    "@tiptap/extension-table-cell": "^2.25.0",
-    "@tiptap/extension-table-header": "^2.25.0",
-    "@tiptap/extension-table-row": "^2.25.0",
-    "@tiptap/pm": "^2.25.0",
-    "@tiptap/starter-kit": "^2.25.0",
+    "@tiptap/core": "^2.26.1",
+    "@tiptap/extension-table": "^2.26.1",
+    "@tiptap/extension-table-cell": "^2.26.1",
+    "@tiptap/extension-table-header": "^2.26.1",
+    "@tiptap/extension-table-row": "^2.26.1",
+    "@tiptap/extension-text-style": "^2.26.1",
+    "@tiptap/pm": "^2.26.1",
+    "@tiptap/starter-kit": "^2.26.1",
     "html-format": "^1.1.7"
   }
 }
