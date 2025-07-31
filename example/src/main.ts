@@ -7,17 +7,19 @@ import Table from '@tiptap/extension-table';
 import TableRow from '@tiptap/extension-table-row';
 import TableCell from '@tiptap/extension-table-cell';
 import TableHeader from '@tiptap/extension-table-header';
+import TextStyle from '@tiptap/extension-text-style';
 import format from "html-format";
 
 const editor = new Editor({
   element: document.querySelector('.editor')!,
   extensions: [
-    StarterKit,
     OfficePaste,
+    TextStyle,
     TableRow,
     TableCell,
     TableHeader,
     Table,
+    StarterKit,
     Extension.create({
       priority: 100000,
       onUpdate: () => {

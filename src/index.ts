@@ -3,6 +3,8 @@ import { Plugin, PluginKey } from '@tiptap/pm/state';
 import { transformMsoStyles } from './transform/style';
 import { transformRemoveBookmarks } from './transform/bookmark';
 import { transformLists } from './transform/list';
+import { transformRemoveLineNumberWrapper } from './transform/line-number';
+import { transformMsoHtmlClasses } from './transform/html-classes';
 
 const OfficePaste = Extension.create({
     priority: 99999,
@@ -21,6 +23,8 @@ const OfficePastePlugin = new Plugin({
                 html = transformLists(html);
                 html = transformRemoveBookmarks(html);
                 html = transformMsoStyles(html);
+                html = transformMsoHtmlClasses(html);
+                html = transformRemoveLineNumberWrapper(html);
             }
             return html;
         }
